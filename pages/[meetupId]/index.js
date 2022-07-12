@@ -4,7 +4,7 @@ function MeetupDetails() {
 	return (
 		<MeetupDetail
 			img="https://www.klatovy.net/fotogalerie/albums/userpics2010/IMG_2547.jpg"
-			title="Klatovy Folklore Festival"
+			title="Klatovy III Folklore Festival"
 			address="Náměstí Míru 1, Klatovy 33901"
 			description="After the end of the traditional pilgrimage, the folklore festival begins in Klatovy. We will meet in the restaurant of the Družba cultural house."
 		/>
@@ -13,7 +13,8 @@ function MeetupDetails() {
 
 export async function getStaticPaths() {
 	return {
-		path: [
+		fallback: false,
+		paths: [
 			{
 				params: {
 					meetupId: 'm1'
@@ -41,7 +42,7 @@ export async function getStaticProps(context) {
 				id: meetupId,
 				image:
 					'https://www.klatovy.net/fotogalerie/albums/userpics2010/IMG_2547.jpg',
-				title: 'Klatovy Folklore Festival',
+				title: 'Klatovy II Folklore Festival',
 				address: 'Náměstí Míru 1, Klatovy 33901',
 				description:
 					'After the end of the traditional pilgrimage, the folklore festival begins in Klatovy. We will meet in the restaurant of the Družba cultural house.'
