@@ -11,6 +11,23 @@ function MeetupDetails() {
 	)
 }
 
+export async function getStaticPaths() {
+	return {
+		path: [
+			{
+				params: {
+					meetupId: 'm1'
+				}
+			},
+			{
+				params: {
+					meetupId: 'm2'
+				}
+			}
+		]
+	}
+}
+
 export async function getStaticProps(context) {
 	// fetch data for a single meetup
 
@@ -21,7 +38,7 @@ export async function getStaticProps(context) {
 	return {
 		props: {
 			meetupData: {
-				id: 'm1',
+				id: meetupId,
 				image:
 					'https://www.klatovy.net/fotogalerie/albums/userpics2010/IMG_2547.jpg',
 				title: 'Klatovy Folklore Festival',
